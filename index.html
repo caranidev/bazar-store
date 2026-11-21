@@ -209,8 +209,10 @@ textarea.m-field { resize: vertical; }
   /* Updating drop__head to one line style */
   @media (max-width: 899.98px) {
     .drop-section .drop__head h1 { white-space: normal; }
-    .drop-section .drop__body { grid-template-columns: 1fr; row-gap: 18px; }
-    .drop-section .drop__photo { grid-column: 1; }
+    .drop-section .drop__body { grid-template-columns: minmax(0, 1fr); row-gap: 18px; min-width: 0; }
+    .drop-section .drop__photo, .drop-section .drop__specs { grid-column: 1; min-width: 0; }
+    .drop-section .drop__specs { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .drop-section .drop__specs > div { min-width: 0; overflow-wrap: anywhere; }
   }
   .drop-section .drop__head, .drop-section .drop__side { position: relative; z-index: 1; }
   .drop-section .drop__head h1 { grid-column: 1 / span 7; }
